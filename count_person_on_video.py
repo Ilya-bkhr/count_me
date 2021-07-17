@@ -56,7 +56,7 @@ def person_on_frame():
                 for item in range(0, len(known_enc)):
                     result = face_recognition.compare_faces(face_codes[code], known_enc[item])
                     if True in result:
-                        print('Этот человек посчитан на предЫдущем кадре')
+                        print('Этот человек посчитан на предыдущем кадре')
                     else:
                         known_enc[0].append(face_codes[code])   
     print(f'ОБНАРУЖЕННО: {len(known_enc[0])} человека')
