@@ -1,11 +1,8 @@
 import sys
 import os
 import face_recognition
-import cv2 as cv 
+import cv2 as cv
 import csv
-import numpy as np
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt 
 
 
@@ -26,9 +23,8 @@ def get_frame(path_to_video, frame_number):
             break
     cv.destroyAllWindows()
 
-
 def person_on_frame():
-    """Обнаружение человека на кадре, и его подсчеn"""
+    """Обнаружение человека на кадре, и его подсчет"""
     if not os.path.exists('out_frames'):
         print('[ОШИБКА] не найдена папка с кадрами')
         sys.exit()
@@ -63,7 +59,6 @@ def person_on_frame():
     return known_enc[0], list_per_second, person_per_second # Получаем результат в виде списка
 
 
-
 def list_to_dict(enc_to_transform):
     """Преобразуем список в словарь"""
     transformed_enc = []
@@ -96,7 +91,7 @@ def show_result(person_per_second, list_per_second, enc_to_transform):
 
 
 def main():
-    get_frame('video\example_5.mp4', 33)
+    get_frame('video\example_6.mp4', 33)
     enc_to_transform, list_per_second, person_per_second = person_on_frame()
     transformed_enc = list_to_dict(enc_to_transform)
     save_result(transformed_enc, 'result.csv')
