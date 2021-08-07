@@ -1,7 +1,7 @@
 env/
 env_new/
 frames
-img
-out_frames
-video
-
+img/
+out_frames/
+video/
+.vscode
